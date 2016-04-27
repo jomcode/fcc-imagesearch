@@ -13,7 +13,7 @@ app.get('/search', (req, res) => {
   const cx = apiDetails.engineId;
   const key = apiDetails.key;
   const q = req.query.q;
-  const offset = req.query.offset || 1;
+  const offset = req.query.offset || 1; // TODO : prevent offset from being less than 1
 
   if (!q) return res.json({ error: 'no query supplied' });
 
